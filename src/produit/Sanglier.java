@@ -3,6 +3,7 @@ package produit;
 import personnages.Gaulois;
 
 public class Sanglier extends Produit {
+
     private int poids;
     private Gaulois chasseur;
     private String nom = "sanglier";
@@ -12,16 +13,24 @@ public class Sanglier extends Produit {
         this.poids = poids;
         this.chasseur = chasseur;
     }
-    
+
     public String getNom() {
         return nom;
     }
 
     public String decrireProduit() {
-        return nom + " de " + poids + unit.toString() + " chassé par " + chasseur.getNom() + ".";
+        return (
+            nom +
+            " de " +
+            poids +
+            unit.toString() +
+            " chassé par " +
+            chasseur.getNom() +
+            "."
+        );
     }
-    
+
     public int calculerPrix(int prix) {
-        return prix * poids/1000;
+        return (prix * poids) / 100;
     }
 }
